@@ -1,33 +1,397 @@
-﻿body {
-    font-family: Arial, sans-serif;
+.highlight {
+    background: #ffeaa7;
+}
+
+/* Global Layout */
+body {
     margin: 0;
-    padding: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     background: #f4f4f4;
 }
 
-header {
-    background: #222;
-    color: white;
-    padding: 10px;
-    text-align: center;
+/* Home Page Background */
+.homePage {
+    background-image: url('../photos/pexels-muribotelho-1865131.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
 }
 
-nav {
-    background: #444;
-    padding: 10px;
+.js-banner {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    background: #222;
+    color: #fff;
+    padding: 6px 10px;
+    border-radius: 6px;
+    font-size: 12px;
+    z-index: 9999;
+}
+
+
+/* Header & Navigation */
+header {
+    position: relative; /* not fixed */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+    background: rgba(34, 34, 34, 0.95);
+    color: white;
     text-align: center;
+    padding: 15px 0;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(34, 34, 34, 0.95);
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    z-index: 1000;
+}
+
+#footer-date {
+    background-color: white !important;
+    padding: 4px 8px;
+    border-radius: 4px;
+    color: black;
+    font-weight: bold;
+    display: inline-block;
+}
+
+
+
+nav {
+    position: relative; /* not fixed */
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(68, 68, 68, 0.95);
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+    z-index: 1;
 }
 
     nav a {
         color: white;
         margin: 0 15px;
         text-decoration: none;
+        font-weight: bold;
     }
 
         nav a:hover {
             text-decoration: underline;
         }
 
+/* Main container spacing */
 main {
+    padding: 40px 20px;
+    width: 90%;
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+
+
+/* Weekly & Monthly Boxes */
+.content-box {
+    background: rgba(255, 255, 255, 0.92);
+    padding: 25px 35px;
+    margin: 20px auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    max-width: 800px;
+    width: 100%;
+    text-align: center;
+}
+
+    .content-box table {
+        border-collapse: collapse;
+        margin: 0 auto 20px;
+        width: 100%;
+    }
+
+    .content-box th,
+    .content-box td {
+        border: 1px solid #000;
+        padding: 10px;
+    }
+
+    /* Signup Button */
+    .content-box button {
+        display: block;
+        margin: 15px auto 0;
+        padding: 10px 20px;
+        font-size: 16px;
+        background: #444;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: background 0.3s;
+    }
+
+        .content-box button:hover {
+            background: #222;
+        }
+
+/* Contact Form */
+.contact-form {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 25px 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    margin: 20px auto;
+    width: 100%;
+    max-width: 600px;
+}
+
+    .contact-form input,
+    .contact-form select,
+    .contact-form textarea,
+    .contact-form button {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        font-size: 14px;
+    }
+
+    .contact-form button {
+        background: #444;
+        color: white;
+        font-weight: bold;
+        border: none;
+        cursor: pointer;
+        transition: background 0.3s;
+    }
+
+        .contact-form button:hover {
+            background: #222;
+        }
+
+.signup-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+.signup-table, .weekly-table {
+    border-collapse: collapse;
+    margin: 0 auto;
+    background-color: rgba(255,255,255,0.95);
+    border-radius: 10px;
     padding: 20px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+    .signup-table td, .signup-table th,
+    .weekly-table td, .weekly-table th {
+        border: 1px solid #000;
+        padding: 10px 15px;
+    }
+
+#signupForm {
+    background-color: rgba(255,255,255,0.95);
+    padding: 25px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 450px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+.backPic {
+    background-image: url('../photos/pexels-willpicturethis-1954524.jpg');
+    background-size: cover; /* stretch image to cover screen */
+    background-position: center; /* center the image */
+    background-repeat: no-repeat; /* prevent tiling */
+}
+
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+    .gallery img {
+        border-radius: 8px;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+
+
+ul {
+    text-align: left;
+    display: inline-block;
+    margin: 10px auto;
+    padding-left: 20px;
+}
+
+
+video {
+    display: block;
+    margin: 20px auto;
+}
+
+.gallery img.zoom {
+    transform: scale(1.8);
+    position: relative;
+    z-index: 1000;
+}
+
+
+
+#aboutTitle {
+    color: #1e88e5;
+    font-size: 2rem;
+    letter-spacing: .5px;
+}
+
+.aboutTagline {
+    color: #444;
+    font-weight: 600;
+}
+
+.btn-row {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 12px;
+}
+
+
+
+/* Laptops & small desktops */
+@media screen and (max-width: 1200px) {
+    .content-box {
+        max-width: 92%;
+    }
+
+    table {
+        font-size: 15px;
+    }
+}
+
+/* Tablets (portrait & landscape) */
+@media screen and (max-width: 992px) {
+    nav {
+        flex-wrap: wrap;
+        gap: 6px;
+    }
+
+        nav a {
+            margin: 6px 10px;
+        }
+
+    .content-box {
+        max-width: 95%;
+        padding: 20px;
+    }
+
+    .gallery {
+        gap: 10px;
+    }
+
+        .gallery img {
+            max-width: 45%;
+            height: auto;
+        }
+}
+
+/* Large phones / small tablets */
+@media screen and (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+        nav a {
+            display: block;
+            margin: 8px 0;
+            font-size: 18px;
+        }
+
+    main {
+        width: 94%;
+        padding: 24px 10px;
+    }
+
+    .content-box {
+        padding: 18px;
+    }
+
+    table {
+        font-size: 14px;
+    }
+
+    .signup-table, .weekly-table {
+        padding: 14px;
+    }
+
+    .contact-form {
+        max-width: 95%;
+        padding: 18px;
+    }
+
+    .gallery img {
+        max-width: 100%;
+    }
+}
+
+/* Phones (most common) */
+@media screen and (max-width: 600px) {
+    h1 {
+        font-size: 22px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    nav a {
+        font-size: 16px;
+    }
+
+    .content-box button {
+        width: 100%;
+    }
+
+    table {
+        width: 100%;
+        font-size: 13px;
+    }
+
+    .content-box th, .content-box td {
+        padding: 8px;
+    }
+}
+
+/* Extra-small phones */
+@media screen and (max-width: 400px) {
+    h1 {
+        font-size: 20px;
+    }
+
+    nav a {
+        font-size: 15px;
+    }
+
+    table th, table td {
+        padding: 6px;
+    }
 }
